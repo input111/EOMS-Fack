@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EOMS2.MainPage"
+             Title="主页"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#121212}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label 
+                Text="EOMS告警消除辅助"
+                FontSize="24"
+                HorizontalOptions="Center"
+                TextColor="#9932CC"
+                FontAttributes="Bold"
+                Margin="0,0,0,10"/>
+
+            <Label 
+                Text="简化EOMS消除流程，提高工作效率"
+                HorizontalOptions="Center"
+                TextColor="Gray"
+                Margin="0,0,0,20"/>
+
+            <Frame BorderColor="#E0E0E0" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="15">
+                    <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                        <Label Text="告警消除信息"
+                            FontSize="20"
+                            VerticalOptions="Center"
+                            Grid.Column="0"/>
+                        <Button x:Name="ClearButton"
+                            Text="❌"
+                            Clicked="OnClearClicked"
+                            WidthRequest="32"
+                            HeightRequest="32"
+                            FontSize="18"
+                            Padding="0"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Grid.Column="1"/>
+                    </Grid>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="工单编号 *" />
+                        <Entry x:Name="WorkOrderEntry" Placeholder="请输入工单编号" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="消除原因 *" />
+                        <HorizontalStackLayout Spacing="10">
+                            <RadioButton x:Name="FireRadio" Content="光缆着火" GroupName="Reason" />
+                            <RadioButton x:Name="PowerRadio" Content="美丽乡村" GroupName="Reason" />
+                            <RadioButton x:Name="ConstructionRadio" Content="市政施工" GroupName="Reason" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="影响的PON口 *" />
+                        <Entry x:Name="AffectedPONEntry" Placeholder="请输入影响的PON口" />
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <StackLayout x:Name="GenerateButtonContainer" Orientation="Horizontal" Spacing="5">
+                            <Button x:Name="GenerateButton" Text="生成" Clicked="OnGenerateClicked" BackgroundColor="#9370DB" TextColor="White" />
+                            <ActivityIndicator x:Name="GenerateLoadingIndicator" IsRunning="False" IsVisible="False" Color="#9370DB" HeightRequest="20" WidthRequest="20" />
+                        </StackLayout>
+                        <Button x:Name="CopyButton" Text="复制" Clicked="OnCopyClicked" BackgroundColor="#778899" TextColor="White" />
+                        <Button x:Name="SendEmailButton" Text="发送邮件" Clicked="OnSendEmailClicked" BackgroundColor="#FF6347" TextColor="White" />
+                        
+                    </HorizontalStackLayout>
+
+                    <ActivityIndicator x:Name="LoadingIndicator" 
+                                     IsRunning="False" 
+                                     IsVisible="False" 
+                                     Color="#9370DB" 
+                                     HeightRequest="40" />
+
+                    <Frame BorderColor="#E0E0E0" 
+                           Padding="15" 
+                           CornerRadius="5" 
+                           HeightRequest="150">
+                        <ScrollView>
+                            <Label x:Name="GeneratedTextLabel" 
+                                   Text="生成的消息将在此显示..." 
+                                   TextColor="Gray" />
+                        </ScrollView>
+                    </Frame>
+                    <Frame BorderColor="#E0E0E0" Padding="10" CornerRadius="10" Margin="0,20,0,0">
+                        <VerticalStackLayout>
+                            <Label Text="图片预览" FontSize="16" TextColor="#9932CC" HorizontalOptions="Center"/>
+                            <Image x:Name="PreviewImage" HeightRequest="180" Aspect="AspectFit" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
