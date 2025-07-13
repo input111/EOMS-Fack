@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EOMS2.Views.PhotoManagerPage"
+             Title="照片管理">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label 
+                Text="照片管理"
+                FontSize="24"
+                HorizontalOptions="Center"
+                TextColor="#9932CC"
+                FontAttributes="Bold"
+                Margin="0,0,0,20"/>
+
+            <Frame BorderColor="#E0E0E0" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="20">
+                    <!-- 光缆着火照片 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="光缆着火照片" FontSize="16" FontAttributes="Bold"/>
+                        <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                            <Button x:Name="FireFolderButton" 
+                                    Clicked="OnFireFolderClicked"
+                                    BackgroundColor="#FF6B6B"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    Grid.Column="0"/>
+                            <Button x:Name="FireDeleteImageButton"
+                                    Text="删除照片"
+                                    Clicked="OnFireDeleteImageClicked"
+                                    BackgroundColor="#FF6347"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    WidthRequest="120"
+                                    Grid.Column="1"
+                                    IsVisible="False"
+                                    IsEnabled="False"/>
+                        </Grid>
+                        <Label x:Name="FireFolderStatus" 
+                               Text="正在检查文件夹状态..." 
+                               TextColor="Gray"
+                               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <!-- 美丽乡村建设照片 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="美丽乡村建设照片" FontSize="16" FontAttributes="Bold"/>
+                        <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                            <Button x:Name="PowerFolderButton"
+                                    Clicked="OnPowerFolderClicked"
+                                    BackgroundColor="#4A90E2"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    Grid.Column="0"/>
+                            <Button x:Name="PowerDeleteImageButton"
+                                    Text="删除照片"
+                                    Clicked="OnPowerDeleteImageClicked"
+                                    BackgroundColor="#FF6347"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    WidthRequest="120"
+                                    Grid.Column="1"
+                                    IsVisible="False"
+                                    IsEnabled="False"/>
+                        </Grid>
+                        <Label x:Name="PowerFolderStatus"
+                               Text="正在检查文件夹状态..."
+                               TextColor="Gray"
+                               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <!-- 市政施工照片 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="市政施工照片" FontSize="16" FontAttributes="Bold"/>
+                        <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                            <Button x:Name="ConstructionFolderButton"
+                                    Clicked="OnConstructionFolderClicked"
+                                    BackgroundColor="#50C878"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    Grid.Column="0"/>
+                            <Button x:Name="ConstructionDeleteImageButton"
+                                    Text="删除照片"
+                                    Clicked="OnConstructionDeleteImageClicked"
+                                    BackgroundColor="#FF6347"
+                                    TextColor="White"
+                                    HeightRequest="50"
+                                    WidthRequest="120"
+                                    Grid.Column="1"
+                                    IsVisible="False"
+                                    IsEnabled="False"/>
+                        </Grid>
+                        <Label x:Name="ConstructionFolderStatus"
+                               Text="正在检查文件夹状态..."
+                               TextColor="Gray"
+                               FontSize="12"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
