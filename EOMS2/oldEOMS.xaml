@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EOMS2.oldEOMS"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label 
+            Text="旧版EOMS告警消除辅助"
+            FontSize="24"
+            HorizontalOptions="Center"
+            TextColor="#9932CC"
+            FontAttributes="Bold"
+            Margin="0,0,0,10"/>
+
+            <Label 
+            Text="旧版消除，不需要不要用"
+            HorizontalOptions="Center"
+            TextColor="Gray"
+            Margin="0,0,0,20"/>
+
+            <Frame BorderColor="#E0E0E0" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="割接信息录入" FontSize="18" FontAttributes="Bold" TextColor="#9932CC"/>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="工单编号 *" />
+                        <Entry x:Name="WorkOrderEntry" Placeholder="请输入工单编号" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="小区编码" />
+                        <Entry x:Name="CommunityCodeEntry" Placeholder="请输入小区编码" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="小区名称" />
+                        <Entry x:Name="CommunityNameEntry" Placeholder="请输入小区名称" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="原PON口 *" />
+                        <Entry x:Name="OriginalPONEntry" Placeholder="请输入原PON口" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="割接后PON口" />
+                        <Entry x:Name="NewPONEntry" Placeholder="请输入割接后PON口" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="VLAN" />
+                        <Entry x:Name="VLANEntry" Placeholder="请输入VLAN" />
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <StackLayout x:Name="GenerateButtonContainer" Orientation="Horizontal" Spacing="5">
+                            <Button x:Name="GenerateButton" Text="生成" Clicked="OnGenerateClicked" BackgroundColor="#9370DB" TextColor="White" HorizontalOptions="Fill" />
+                            <ActivityIndicator x:Name="GenerateLoadingIndicator" IsRunning="False" IsVisible="False" Color="#9370DB" HeightRequest="20" WidthRequest="20" />
+                        </StackLayout>
+                        <Button x:Name="CopyButton" Text="复制" Clicked="OnCopyClicked" BackgroundColor="#778899" TextColor="White" HorizontalOptions="Fill" />
+                        <StackLayout x:Name="SendEmailButtonContainer" Orientation="Horizontal" Spacing="5">
+                            <Button x:Name="SendEmailButton" Text="发送邮件" Clicked="OnSendEmailClicked" BackgroundColor="#FF6347" TextColor="White" HorizontalOptions="Fill" />
+                            <ActivityIndicator x:Name="EmailLoadingIndicator" IsRunning="False" IsVisible="False" Color="#FF6347" HeightRequest="20" WidthRequest="20" />
+                        </StackLayout>
+                    </HorizontalStackLayout>
+                    
+
+                    <Frame BorderColor="#E0E0E0" Padding="15" CornerRadius="5" HeightRequest="300">
+                        <ScrollView>
+                            <Label x:Name="GeneratedTextLabel" Text="生成的消息将在此显示..." TextColor="Gray" />
+                        </ScrollView>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
