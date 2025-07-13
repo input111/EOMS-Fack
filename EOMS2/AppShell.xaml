@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EOMS2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EOMS2"
+    xmlns:views="clr-namespace:EOMS2.Views"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="#f5f5f5"
+    Title="EOMS2">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="#9370DB">
+            <Label Text="EOMS工具" 
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        Title="主页"
+        Icon="zhuye.png"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="割接申请消除"
+        Icon="gejie.png"
+        ContentTemplate="{DataTemplate local:oldEOMS}"
+        Route="oldEOMS" />
+
+    <ShellContent
+        Title="延迟申请"
+        Icon="yanchi.png"
+        ContentTemplate="{DataTemplate local:DelayRequestPage}"
+        Route="DelayRequestPage" />
+
+    <ShellContent
+        Title="照片管理"
+        Icon="zhaopian.png"
+        ContentTemplate="{DataTemplate views:PhotoManagerPage}"
+        Route="PhotoManager"/>
+
+    <ShellContent
+        Title="工单记录"
+        Icon="sms.png"
+        ContentTemplate="{DataTemplate local:WorkOrderRecordPage}"
+        Route="WorkOrderRecordPage"/>
+
+    <ShellContent
+        Title="设置"
+        Icon="shezhi.png"
+        ContentTemplate="{DataTemplate local:shezhi}"
+        Route="shezhi" />
+
+    <Shell.FlyoutFooter>
+        <Grid HeightRequest="40" BackgroundColor="Transparent">
+            <Label Text="CV工程师制作" 
+                   TextColor="#666666"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>
