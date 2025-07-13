@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EOMS2"
+             x:Class="EOMS2.WorkOrderRecordPage"
+             Title="工单记录">
+    <Grid RowDefinitions="Auto,*">
+        <!-- 搜索区域 -->
+        <Frame Grid.Row="0" Margin="10" Padding="10" BorderColor="LightGray">
+            <VerticalStackLayout Spacing="10">
+                <Grid ColumnDefinitions="*,*,Auto">
+                    <Entry x:Name="WorkOrderSearchEntry" 
+                       Placeholder="工单号"
+                       TextChanged="OnSearchTextChanged"
+                       Grid.Column="0"
+                       Margin="0,0,5,0"/>
+
+                    <Entry x:Name="PonPortSearchEntry" 
+                       Placeholder="PON口"
+                       TextChanged="OnSearchTextChanged"
+                       Grid.Column="1"
+                       Margin="5,0,5,0"/>
+
+                    <Button Text="重置" 
+                        Clicked="OnResetFilter"
+                        BackgroundColor="#9932CC"
+                        Grid.Column="2"
+                        Margin="5,0,0,0"/>
+                </Grid>
+
+                <HorizontalStackLayout Spacing="10">
+                    <DatePicker x:Name="StartDatePicker" 
+                           DateSelected="OnDateSelected"/>
+                    <Label Text="至" VerticalOptions="Center"/>
+                    <DatePicker x:Name="EndDatePicker" 
+                           DateSelected="OnDateSelected"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- 工单列表区域 -->
+        <Grid Grid.Row="1">
+            <!-- 空状态提示 -->
+            <Label x:Name="EmptyStateLabel"
+                   Text="申请消除的工单将在这里显示..."
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   IsVisible="{Binding IsEmpty}"/>
+
+            <CollectionView x:Name="workOrdersCollection"
+                          ItemsSource="{Binding WorkOrders}"
+                          SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="删除"
+                                              BackgroundColor="Red"
+                                              Command="{Binding Source={RelativeSource AncestorType={x:Type local:WorkOrderRecordPage}}, Path=DeleteCommand}"
+                                              CommandParameter="{Binding .}"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Frame Margin="10"
+                                   Padding="10"
+                                   BorderColor="LightGray"
+                                   CornerRadius="5">
+                                <StackLayout>
+                                    <Label Text="{Binding WorkOrderNumber, StringFormat='工单号：{0}'}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding CompletionTime, StringFormat='消除时间：{0}'}"
+                                           FontSize="14"/>
+                                    <Label Text="{Binding PonPort, StringFormat='PON口：{0}'}"
+                                           FontSize="14"/>
+                                </StackLayout>
+                            </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>
