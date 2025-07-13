@@ -1,0 +1,12 @@
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\EOMS2.csproj.AssemblyReference.cache
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\mauifont.inputs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\mauisplash.inputs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\mauimanifest.stamp
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.i.cs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.cs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\XamlTypeInfo.g.cs
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xaml
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\XamlSaveStateFile.xml
+E:\0code\EOMS\EOMS2\EOMS2\obj\Release\net9.0-windows10.0.19041.0\win10-x64\EOMS2.GeneratedMSBuildEditorConfig.editorconfig
